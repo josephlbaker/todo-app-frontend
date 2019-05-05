@@ -9,7 +9,7 @@ export default class Home extends Component {
   getTodos = () => {
     axios({
       type: 'get',
-      url: 'http://localhost:3001/tasks'
+      url: 'https://ancient-anchorage-15013.herokuapp.com/tasks'
     }).then((res) => {
       console.log(res);
       this.setState({
