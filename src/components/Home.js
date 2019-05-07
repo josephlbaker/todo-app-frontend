@@ -20,7 +20,7 @@ export default class Home extends Component {
     if (localStorage.token) {
       axios({
         method: "get",
-        url: `https://ancient-anchorage-15013.herokuapp.com/users/`,
+        url: `https://cors-anywhere.herokuapp.com/https://ancient-anchorage-15013.herokuapp.com/users/`,
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
@@ -48,7 +48,7 @@ export default class Home extends Component {
   getTodos = () => {
     axios({
       type: 'get',
-      url: 'https://ancient-anchorage-15013.herokuapp.com/tasks'
+      url: 'https://cors-anywhere.herokuapp.com/https://ancient-anchorage-15013.herokuapp.com/tasks'
     }).then((res) => {
       console.log(res);
       this.setState({
@@ -60,7 +60,7 @@ export default class Home extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      .post("https://ancient-anchorage-15013.herokuapp.com/users/login", {
+      .post("https://cors-anywhere.herokuapp.com/https://ancient-anchorage-15013.herokuapp.com/users/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -80,7 +80,7 @@ export default class Home extends Component {
   handleSignUp = event => {
     event.preventDefault();
     axios
-      .post("https://ancient-anchorage-15013.herokuapp.com/users/signup", {
+      .post("https://cors-anywhere.herokuapp.com/https://ancient-anchorage-15013.herokuapp.com/users/signup", {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
