@@ -20,7 +20,7 @@ export default class Home extends Component {
     if (localStorage.token) {
       axios({
         method: "get",
-        url: `http://localhost:3001/users/`,
+        url: `https://ancient-anchorage-15013.herokuapp.com/users/`,
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
